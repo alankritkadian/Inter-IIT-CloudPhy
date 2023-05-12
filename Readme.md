@@ -14,6 +14,8 @@ The script starts by importing the following libraries:
 
 The `segment` function is used for image segmentation, which is done using Roboflow. The function first imports the required libraries, including `base64`, `cv2`, `matplotlib`, and `numpy`. It then reads the input image, resizes it, and passes it to the Roboflow model for segmentation. The function then extracts the segmentation mask from the resulting JSON and converts it to a NumPy array. Finally, it applies the mask to the original image and returns the segmented image.
 
+![Segmentation](static/segmentation.png)
+
 ## Cropping Images
 
 The `cropping` function is used to crop the segmented image. The function takes as input the segmented image and the points for the region of interest (ROI). It first imports `cv2` and `matplotlib`, and then performs perspective transformation to warp the image and extract the ROI. The function returns the cropped image.
@@ -26,10 +28,16 @@ The `classify` function is used for image classification. The function first imp
 
 The `inference_obj` function is used for object detection. The function first imports the required libraries, including `glob`, `matplotlib`, `cv2`, `requests`, and `numpy`. It then performs object detection on the input images using the pre-trained YOLOv5 model. The function returns the directory where the inference results are stored.
 
+![Object Detection](static/object_detection.png)
+
 ## OCR Task
 
 The `ocr_task` function is used for OCR. The function takes as input an array of cropped images, reads each image, applies Gaussian blur and sharpening filters, and passes it to the OCR engine for text recognition. The function then returns the OCR result for each image.
 
+![Cropping](static/cropping.png)
+
 ## Google Drive Integration
 
 The script mounts the Google Drive at the beginning using the `drive.mount()` function to store the pre-trained models and other necessary files.
+
+![Results](static/detected.png)
